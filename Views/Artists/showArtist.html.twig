@@ -1,0 +1,36 @@
+{% extends "template.html.twig" %}
+
+{% block title %}{{artist.first_name}} {{artist.last_name}}{% endblock %}
+
+{% block body %}
+<div class="container">
+   <div class="flex-column align-items-start bd-highlight">
+      <div class="d-flex pt-5">
+         <div class="d-flex flex-column">
+
+            <img class="rounded" src="{{artist.picture}}" style="width:300px;height:400px;">
+
+            <div class="mt-4">
+               <span class="font-weight-bold">Date de naissance :</span> <span>{{artist.birth_day | date("d/m/Y")}} </span> <br>
+               <span class="font-weight-bold">Rôle :</span> <span>{{role}}</span>
+            </div>
+
+            <h3 class="mb-4 mt-4">À voir aussi dans :</h3>
+
+            <!-- Affiche les films ou l'acteur est présent -->
+
+         </div>
+
+         <div class="d-flex flex-column ml-5">
+            <h2 class="text-center mx-auto mb-5">
+               {{artist.first_name}} {{artist.last_name}}
+            </h2>
+            <div>
+               <p class="font-weight-bold">Biographie :</p>
+               {{artist.bio}}
+            </div>
+         </div>
+      </div>
+   </div>
+</div>
+{% endblock %}
